@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace ModuleNameSpace
 {
-	internal class MainModuleRawUI : PSHostRawUserInterface
+		internal class MainModuleRawUI : PSHostRawUserInterface
 	{
-		public override ConsoleColor BackgroundColor
+								public override ConsoleColor BackgroundColor
 		{
 			get
 			{
@@ -17,7 +17,8 @@ namespace ModuleNameSpace
 				this.GUIBackgroundColor = value;
 			}
 		}
-		public override Size BufferSize
+
+								public override Size BufferSize
 		{
 			get
 			{
@@ -27,7 +28,8 @@ namespace ModuleNameSpace
 			{
 			}
 		}
-		public override Coordinates CursorPosition
+
+								public override Coordinates CursorPosition
 		{
 			get
 			{
@@ -37,7 +39,8 @@ namespace ModuleNameSpace
 			{
 			}
 		}
-		public override int CursorSize
+
+								public override int CursorSize
 		{
 			get
 			{
@@ -47,7 +50,8 @@ namespace ModuleNameSpace
 			{
 			}
 		}
-		public override void FlushInputBuffer()
+
+				public override void FlushInputBuffer()
 		{
 			if (this.Invisible_Form != null)
 			{
@@ -60,7 +64,8 @@ namespace ModuleNameSpace
 			this.Invisible_Form.ShowInTaskbar = false;
 			this.Invisible_Form.Visible = true;
 		}
-		public override ConsoleColor ForegroundColor
+
+								public override ConsoleColor ForegroundColor
 		{
 			get
 			{
@@ -71,7 +76,8 @@ namespace ModuleNameSpace
 				this.GUIForegroundColor = value;
 			}
 		}
-		public override BufferCell[,] GetBufferContents(Rectangle rectangle)
+
+				public override BufferCell[,] GetBufferContents(Rectangle rectangle)
 		{
 			BufferCell[,] array = new BufferCell[rectangle.Bottom - rectangle.Top + 1, rectangle.Right - rectangle.Left + 1];
 			for (int i = 0; i <= rectangle.Bottom - rectangle.Top; i++)
@@ -83,28 +89,32 @@ namespace ModuleNameSpace
 			}
 			return array;
 		}
-		public override bool KeyAvailable
+
+						public override bool KeyAvailable
 		{
 			get
 			{
 				return true;
 			}
 		}
-		public override Size MaxPhysicalWindowSize
+
+						public override Size MaxPhysicalWindowSize
 		{
 			get
 			{
 				return new Size(240, 84);
 			}
 		}
-		public override Size MaxWindowSize
+
+						public override Size MaxWindowSize
 		{
 			get
 			{
 				return new Size(120, 84);
 			}
 		}
-		public override KeyInfo ReadKey(ReadKeyOptions options)
+
+				public override KeyInfo ReadKey(ReadKeyOptions options)
 		{
 			if ((options & ReadKeyOptions.IncludeKeyDown) != (ReadKeyOptions)0)
 			{
@@ -112,16 +122,20 @@ namespace ModuleNameSpace
 			}
 			return ReadKey_Box.Show("", "", false);
 		}
-		public override void ScrollBufferContents(Rectangle source, Coordinates destination, Rectangle clip, BufferCell fill)
+
+				public override void ScrollBufferContents(Rectangle source, Coordinates destination, Rectangle clip, BufferCell fill)
 		{
 		}
-		public override void SetBufferContents(Rectangle rectangle, BufferCell fill)
+
+				public override void SetBufferContents(Rectangle rectangle, BufferCell fill)
 		{
 		}
-		public override void SetBufferContents(Coordinates origin, BufferCell[,] contents)
+
+				public override void SetBufferContents(Coordinates origin, BufferCell[,] contents)
 		{
 		}
-		public override Coordinates WindowPosition
+
+								public override Coordinates WindowPosition
 		{
 			get
 			{
@@ -135,7 +149,8 @@ namespace ModuleNameSpace
 			{
 			}
 		}
-		public override Size WindowSize
+
+								public override Size WindowSize
 		{
 			get
 			{
@@ -149,7 +164,8 @@ namespace ModuleNameSpace
 			{
 			}
 		}
-		public override string WindowTitle
+
+								public override string WindowTitle
 		{
 			get
 			{
@@ -159,8 +175,11 @@ namespace ModuleNameSpace
 			{
 			}
 		}
-		private ConsoleColor GUIBackgroundColor = ConsoleColor.White;
-		private ConsoleColor GUIForegroundColor;
-		private Form Invisible_Form;
+
+				private ConsoleColor GUIBackgroundColor = ConsoleColor.White;
+
+				private ConsoleColor GUIForegroundColor;
+
+				private Form Invisible_Form;
 	}
 }

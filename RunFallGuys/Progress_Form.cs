@@ -7,8 +7,9 @@ using System.Windows.Forms;
 
 namespace ModuleNameSpace
 {
-	public partial class Progress_Form : Form
-	{		private Color DrawingColor(ConsoleColor color)
+		public partial class Progress_Form : Form
+	{
+				private Color DrawingColor(ConsoleColor color)
 		{
 			switch (color)
 			{
@@ -45,7 +46,8 @@ namespace ModuleNameSpace
 			}
 			return Color.Yellow;
 		}
-		private void TimeTick(object source, ElapsedEventArgs e)
+
+				private void TimeTick(object source, ElapsedEventArgs e)
 		{
 			if (this.inTick)
 			{
@@ -63,7 +65,8 @@ namespace ModuleNameSpace
 			}
 			this.inTick = false;
 		}
-		private void AddBar(ref Progress_Form.Progress_Data pd, int position)
+
+				private void AddBar(ref Progress_Form.Progress_Data pd, int position)
 		{
 			pd.lbActivity = new Label();
 			pd.lbActivity.Left = 5;
@@ -111,20 +114,24 @@ namespace ModuleNameSpace
 			pd.lbOperation.Text = "";
 			base.Controls.Add(pd.lbOperation);
 		}
-		public int GetCount()
+
+				public int GetCount()
 		{
 			return this.progressDataList.Count;
 		}
-		public Progress_Form()
+
+				public Progress_Form()
 		{
 			this.InitializeComponent();
 		}
-		public Progress_Form(ConsoleColor BarColor)
+
+				public Progress_Form(ConsoleColor BarColor)
 		{
 			this.ProgressBarColor = BarColor;
 			this.InitializeComponent();
 		}
-		public void Update(ProgressRecord objRecord)
+
+				public void Update(ProgressRecord objRecord)
 		{
 			if (objRecord == null)
 			{
@@ -314,21 +321,34 @@ namespace ModuleNameSpace
 			base.Height = Screen.FromControl(this).Bounds.Height;
 			base.Location = new Point((Screen.FromControl(this).Bounds.Width - base.Width) / 2, 0);
 		}
-		private ConsoleColor ProgressBarColor = ConsoleColor.DarkCyan;
-		private int barNumber = -1;
-		private int barValue = -1;
-		private bool inTick;
-		private List<Progress_Form.Progress_Data> progressDataList = new List<Progress_Form.Progress_Data>();
-		private struct Progress_Data
+
+				private ConsoleColor ProgressBarColor = ConsoleColor.DarkCyan;
+
+				private int barNumber = -1;
+
+				private int barValue = -1;
+
+				private bool inTick;
+
+				private List<Progress_Form.Progress_Data> progressDataList = new List<Progress_Form.Progress_Data>();
+
+				private struct Progress_Data
 		{
-			internal Label lbActivity;
-			internal Label lbStatus;
-			internal ProgressBar objProgressBar;
-			internal Label lbRemainingTime;
-			internal Label lbOperation;
-			internal int ActivityId;
-			internal int ParentActivityId;
-			internal int Depth;
+						internal Label lbActivity;
+
+						internal Label lbStatus;
+
+						internal ProgressBar objProgressBar;
+
+						internal Label lbRemainingTime;
+
+						internal Label lbOperation;
+
+						internal int ActivityId;
+
+						internal int ParentActivityId;
+
+						internal int Depth;
 		}
 	}
 }

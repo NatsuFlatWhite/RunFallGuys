@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace ModuleNameSpace
 {
-	internal class MainModuleUI : PSHostUserInterface
+		internal class MainModuleUI : PSHostUserInterface
 	{
-		public MainModuleUI()
+				public MainModuleUI()
 		{
 			this.rawUI = new MainModuleRawUI();
 		}
 
-		public override Dictionary<string, PSObject> Prompt(string caption, string message, Collection<FieldDescription> descriptions)
+				public override Dictionary<string, PSObject> Prompt(string caption, string message, Collection<FieldDescription> descriptions)
 		{
 			if (!string.IsNullOrEmpty(caption) || !string.IsNullOrEmpty(message))
 			{
@@ -159,7 +159,8 @@ namespace ModuleNameSpace
 			this.ib_message = "";
 			return dictionary;
 		}
-		public override int PromptForChoice(string caption, string message, Collection<ChoiceDescription> choices, int defaultChoice)
+
+				public override int PromptForChoice(string caption, string message, Collection<ChoiceDescription> choices, int defaultChoice)
 		{
 			int num = Choice_Box.Show(choices, defaultChoice, caption, message);
 			if (num == -1)
@@ -168,7 +169,8 @@ namespace ModuleNameSpace
 			}
 			return num;
 		}
-		public override PSCredential PromptForCredential(string caption, string message, string userName, string targetName, PSCredentialTypes allowedCredentialTypes, PSCredentialUIOptions options)
+
+				public override PSCredential PromptForCredential(string caption, string message, string userName, string targetName, PSCredentialTypes allowedCredentialTypes, PSCredentialUIOptions options)
 		{
 			Credential_Form.User_Pwd user_Pwd = Credential_Form.PromptForPassword(caption, message, targetName, userName, allowedCredentialTypes, options);
 			if (user_Pwd != null)
@@ -182,7 +184,8 @@ namespace ModuleNameSpace
 			}
 			return null;
 		}
-		public override PSCredential PromptForCredential(string caption, string message, string userName, string targetName)
+
+				public override PSCredential PromptForCredential(string caption, string message, string userName, string targetName)
 		{
 			Credential_Form.User_Pwd user_Pwd = Credential_Form.PromptForPassword(caption, message, targetName, userName, PSCredentialTypes.Default, PSCredentialUIOptions.Default);
 			if (user_Pwd != null)
@@ -196,14 +199,16 @@ namespace ModuleNameSpace
 			}
 			return null;
 		}
-		public override PSHostRawUserInterface RawUI
+
+						public override PSHostRawUserInterface RawUI
 		{
 			get
 			{
 				return this.rawUI;
 			}
 		}
-		public override string ReadLine()
+
+				public override string ReadLine()
 		{
 			string result = "";
 			if (Input_Box.Show(this.ib_caption, this.ib_message, ref result) == DialogResult.OK)
@@ -212,7 +217,8 @@ namespace ModuleNameSpace
 			}
 			return "";
 		}
-		private SecureString getPassword()
+
+				private SecureString getPassword()
 		{
 			SecureString secureString = new SecureString();
 			for (;;)
@@ -239,7 +245,8 @@ namespace ModuleNameSpace
 			Console.WriteLine();
 			return secureString;
 		}
-		public override SecureString ReadLineAsSecureString()
+
+				public override SecureString ReadLineAsSecureString()
 		{
 			SecureString secureString = new SecureString();
 			string text = "";
@@ -252,28 +259,36 @@ namespace ModuleNameSpace
 			}
 			return secureString;
 		}
-		public override void Write(ConsoleColor foregroundColor, ConsoleColor backgroundColor, string value)
+
+				public override void Write(ConsoleColor foregroundColor, ConsoleColor backgroundColor, string value)
 		{
 		}
-		public override void Write(string value)
+
+				public override void Write(string value)
 		{
 		}
-		public override void WriteDebugLine(string message)
+
+				public override void WriteDebugLine(string message)
 		{
 		}
-		public override void WriteErrorLine(string value)
+
+				public override void WriteErrorLine(string value)
 		{
 		}
-		public override void WriteLine()
+
+				public override void WriteLine()
 		{
 		}
-		public override void WriteLine(ConsoleColor foregroundColor, ConsoleColor backgroundColor, string value)
+
+				public override void WriteLine(ConsoleColor foregroundColor, ConsoleColor backgroundColor, string value)
 		{
 		}
-		public override void WriteLine(string value)
+
+				public override void WriteLine(string value)
 		{
 		}
-		public override void WriteProgress(long sourceId, ProgressRecord record)
+
+				public override void WriteProgress(long sourceId, ProgressRecord record)
 		{
 			if (this.pf == null)
 			{
@@ -290,25 +305,41 @@ namespace ModuleNameSpace
 				this.pf = null;
 			}
 		}
-		public override void WriteVerboseLine(string message)
+
+				public override void WriteVerboseLine(string message)
 		{
 		}
-		public override void WriteWarningLine(string message)
+
+				public override void WriteWarningLine(string message)
 		{
 		}
-		private MainModuleRawUI rawUI;
-		public ConsoleColor ErrorForegroundColor = ConsoleColor.Red;
-		public ConsoleColor ErrorBackgroundColor;
-		public ConsoleColor WarningForegroundColor = ConsoleColor.Yellow;
-		public ConsoleColor WarningBackgroundColor;
-		public ConsoleColor DebugForegroundColor = ConsoleColor.Yellow;
-		public ConsoleColor DebugBackgroundColor;
-		public ConsoleColor VerboseForegroundColor = ConsoleColor.Yellow;
-		public ConsoleColor VerboseBackgroundColor;
-		public ConsoleColor ProgressForegroundColor = ConsoleColor.DarkCyan;
-		public ConsoleColor ProgressBackgroundColor = ConsoleColor.DarkCyan;
-		private string ib_caption;
-		private string ib_message;
-		public Progress_Form pf;
+
+				private MainModuleRawUI rawUI;
+
+				public ConsoleColor ErrorForegroundColor = ConsoleColor.Red;
+
+				public ConsoleColor ErrorBackgroundColor;
+
+				public ConsoleColor WarningForegroundColor = ConsoleColor.Yellow;
+
+				public ConsoleColor WarningBackgroundColor;
+
+				public ConsoleColor DebugForegroundColor = ConsoleColor.Yellow;
+
+				public ConsoleColor DebugBackgroundColor;
+
+				public ConsoleColor VerboseForegroundColor = ConsoleColor.Yellow;
+
+				public ConsoleColor VerboseBackgroundColor;
+
+				public ConsoleColor ProgressForegroundColor = ConsoleColor.DarkCyan;
+
+				public ConsoleColor ProgressBackgroundColor = ConsoleColor.DarkCyan;
+
+				private string ib_caption;
+
+				private string ib_message;
+
+				public Progress_Form pf;
 	}
 }

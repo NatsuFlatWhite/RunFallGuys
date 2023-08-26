@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace ModuleNameSpace
 {
-	public class Input_Box
+		public class Input_Box
 	{
-		[DllImport("user32.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
+				[DllImport("user32.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode)]
 		private static extern IntPtr MB_GetString(uint strId);
 
-		public static DialogResult Show(string strTitle, string strPrompt, ref string strVal, bool blSecure)
+				public static DialogResult Show(string strTitle, string strPrompt, ref string strVal, bool blSecure)
 		{
 			Form form = new Form();
 			form.AutoScaleDimensions = new SizeF(6f, 13f);
@@ -100,7 +100,7 @@ namespace ModuleNameSpace
 			return result;
 		}
 
-		public static DialogResult Show(string strTitle, string strPrompt, ref string strVal)
+				public static DialogResult Show(string strTitle, string strPrompt, ref string strVal)
 		{
 			return Input_Box.Show(strTitle, strPrompt, ref strVal, false);
 		}

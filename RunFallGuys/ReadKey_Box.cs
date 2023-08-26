@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace ModuleNameSpace
 {
-	public class ReadKey_Box
+		public class ReadKey_Box
 	{
-		[DllImport("user32.dll")]
+				[DllImport("user32.dll")]
 		public static extern int ToUnicode(uint wVirtKey, uint wScanCode, byte[] lpKeyState, [MarshalAs(UnmanagedType.LPWStr)] [Out] StringBuilder pwszBuff, int cchBuff, uint wFlags);
 
-		private static string GetCharFromKeys(Keys keys, bool blShift, bool blAltGr)
+				private static string GetCharFromKeys(Keys keys, bool blShift, bool blAltGr)
 		{
 			StringBuilder stringBuilder = new StringBuilder(64);
 			byte[] array = new byte[256];
@@ -33,7 +33,7 @@ namespace ModuleNameSpace
 			return "\0";
 		}
 
-		public static KeyInfo Show(string strTitle, string strPrompt, bool blIncludeKeyDown)
+				public static KeyInfo Show(string strTitle, string strPrompt, bool blIncludeKeyDown)
 		{
 			ReadKey_Box.Keyboard_Form keyboard_Form = new ReadKey_Box.Keyboard_Form();
 			Label label = new Label();
@@ -73,9 +73,10 @@ namespace ModuleNameSpace
 			keyboard_Form.ShowDialog();
 			return keyboard_Form.keyinfo;
 		}
-		private class Keyboard_Form : Form
+
+				private class Keyboard_Form : Form
 		{
-			public Keyboard_Form()
+						public Keyboard_Form()
 			{
 				base.AutoScaleDimensions = new SizeF(6f, 13f);
 				base.AutoScaleMode = AutoScaleMode.Font;
@@ -83,7 +84,7 @@ namespace ModuleNameSpace
 				base.KeyUp += this.Keyboard_Form_KeyUp;
 			}
 
-			private void Keyboard_Form_KeyDown(object sender, KeyEventArgs e)
+						private void Keyboard_Form_KeyDown(object sender, KeyEventArgs e)
 			{
 				if (this.checkKeyDown)
 				{
@@ -119,7 +120,7 @@ namespace ModuleNameSpace
 				}
 			}
 
-			private void Keyboard_Form_KeyUp(object sender, KeyEventArgs e)
+						private void Keyboard_Form_KeyUp(object sender, KeyEventArgs e)
 			{
 				if (!this.checkKeyDown)
 				{
@@ -155,9 +156,9 @@ namespace ModuleNameSpace
 				}
 			}
 
-			public bool checkKeyDown = true;
+						public bool checkKeyDown = true;
 
-			public KeyInfo keyinfo;
+						public KeyInfo keyinfo;
 		}
 	}
 }

@@ -2,9 +2,10 @@
 
 namespace ModuleNameSpace
 {
-	internal interface MainAppInterface
+		internal interface MainAppInterface
 	{
-		bool ShouldExit { get; set; }
-		int ExitCode { get; set; }
+								bool ShouldExit { get; set; }
+
+								int ExitCode { get; set; }
 	}
 }

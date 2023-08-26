@@ -1,8 +1,8 @@
 ﻿namespace ModuleNameSpace
 {
-	public partial class Progress_Form : global::System.Windows.Forms.Form
+		public partial class Progress_Form : global::System.Windows.Forms.Form
 	{
-		private void InitializeComponent()
+				private void InitializeComponent()
 		{
 			base.SuspendLayout();
 			base.AutoScaleDimensions = new global::System.Drawing.SizeF(6f, 13f);
@@ -20,9 +20,10 @@
 			base.ResumeLayout();
 			this.timer.Elapsed += new global::System.Timers.ElapsedEventHandler(this.TimeTick);
 			this.timer.Interval = 50.0;
-			this.timer.AutoReset = true;
+			this.timer.AutoReset = false;
 			this.timer.Start();
 		}
-		private global::System.Timers.Timer timer = new global::System.Timers.Timer();
+
+				private global::System.Timers.Timer timer = new global::System.Timers.Timer();
 	}
 }

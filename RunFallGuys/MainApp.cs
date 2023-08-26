@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ModuleNameSpace
 {
-	internal class MainApp : MainAppInterface
+		internal class MainApp : MainAppInterface
 	{
-		public bool ShouldExit
+								public bool ShouldExit
 		{
 			get
 			{
@@ -23,7 +23,8 @@ namespace ModuleNameSpace
 				this.shouldExit = value;
 			}
 		}
-		public int ExitCode
+
+								public int ExitCode
 		{
 			get
 			{
@@ -34,7 +35,8 @@ namespace ModuleNameSpace
 				this.exitCode = value;
 			}
 		}
-		[STAThread]
+
+				[STAThread]
 		private static int Main(string[] args)
 		{
 			Application.EnableVisualStyles();
@@ -195,11 +197,14 @@ namespace ModuleNameSpace
 			}
 			return mainApp.ExitCode;
 		}
-		private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+
+				private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
 		{
 			throw new Exception("Unhandled exception in " + AppDomain.CurrentDomain.FriendlyName);
 		}
-		private bool shouldExit;
-		private int exitCode;
+
+				private bool shouldExit;
+
+				private int exitCode;
 	}
 }

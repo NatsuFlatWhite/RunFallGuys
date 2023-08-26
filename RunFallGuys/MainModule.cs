@@ -6,14 +6,15 @@ using System.Threading;
 
 namespace ModuleNameSpace
 {
-	internal class MainModule : PSHost
+		internal class MainModule : PSHost
 	{
-		public MainModule(MainAppInterface app, MainModuleUI ui)
+				public MainModule(MainAppInterface app, MainModuleUI ui)
 		{
 			this.parent = app;
 			this.ui = ui;
 		}
-		public override PSObject PrivateData
+
+						public override PSObject PrivateData
 		{
 			get
 			{
@@ -29,74 +30,92 @@ namespace ModuleNameSpace
 				return result;
 			}
 		}
-		public override CultureInfo CurrentCulture
+
+						public override CultureInfo CurrentCulture
 		{
 			get
 			{
 				return this.originalCultureInfo;
 			}
 		}
-		public override CultureInfo CurrentUICulture
+
+						public override CultureInfo CurrentUICulture
 		{
 			get
 			{
 				return this.originalUICultureInfo;
 			}
 		}
-		public override Guid InstanceId
+
+						public override Guid InstanceId
 		{
 			get
 			{
 				return this.myId;
 			}
 		}
-		public override string Name
+
+						public override string Name
 		{
 			get
 			{
 				return "PSRunspace-Host";
 			}
 		}
-		public override PSHostUserInterface UI
+
+						public override PSHostUserInterface UI
 		{
 			get
 			{
 				return this.ui;
 			}
 		}
-		public override Version Version
+
+						public override Version Version
 		{
 			get
 			{
 				return new Version(0, 5, 0, 27);
 			}
 		}
-		public override void EnterNestedPrompt()
+
+				public override void EnterNestedPrompt()
 		{
 		}
-		public override void ExitNestedPrompt()
+
+				public override void ExitNestedPrompt()
 		{
 		}
-		public override void NotifyBeginApplication()
+
+				public override void NotifyBeginApplication()
 		{
 		}
-		public override void NotifyEndApplication()
+
+				public override void NotifyEndApplication()
 		{
 		}
-		public override void SetShouldExit(int exitCode)
+
+				public override void SetShouldExit(int exitCode)
 		{
 			this.parent.ShouldExit = true;
 			this.parent.ExitCode = exitCode;
 		}
-		private MainAppInterface parent;
-		private MainModuleUI ui;
-		private CultureInfo originalCultureInfo = Thread.CurrentThread.CurrentCulture;
-		private CultureInfo originalUICultureInfo = Thread.CurrentThread.CurrentUICulture;
-		private Guid myId = Guid.NewGuid();
-		private PSObject _consoleColorProxy;
-		public class ConsoleColorProxy
+
+				private MainAppInterface parent;
+
+				private MainModuleUI ui;
+
+				private CultureInfo originalCultureInfo = Thread.CurrentThread.CurrentCulture;
+
+				private CultureInfo originalUICultureInfo = Thread.CurrentThread.CurrentUICulture;
+
+				private Guid myId = Guid.NewGuid();
+
+				private PSObject _consoleColorProxy;
+
+				public class ConsoleColorProxy
 		{
-			public ConsoleColorProxy(MainModuleUI ui)
+						public ConsoleColorProxy(MainModuleUI ui)
 			{
 				if (ui == null)
 				{
@@ -104,7 +123,8 @@ namespace ModuleNameSpace
 				}
 				this._ui = ui;
 			}
-			public ConsoleColor ErrorForegroundColor
+
+												public ConsoleColor ErrorForegroundColor
 			{
 				get
 				{
@@ -115,7 +135,8 @@ namespace ModuleNameSpace
 					this._ui.ErrorForegroundColor = value;
 				}
 			}
-			public ConsoleColor ErrorBackgroundColor
+
+												public ConsoleColor ErrorBackgroundColor
 			{
 				get
 				{
@@ -126,7 +147,8 @@ namespace ModuleNameSpace
 					this._ui.ErrorBackgroundColor = value;
 				}
 			}
-			public ConsoleColor WarningForegroundColor
+
+												public ConsoleColor WarningForegroundColor
 			{
 				get
 				{
@@ -137,7 +159,8 @@ namespace ModuleNameSpace
 					this._ui.WarningForegroundColor = value;
 				}
 			}
-			public ConsoleColor WarningBackgroundColor
+
+												public ConsoleColor WarningBackgroundColor
 			{
 				get
 				{
@@ -148,7 +171,8 @@ namespace ModuleNameSpace
 					this._ui.WarningBackgroundColor = value;
 				}
 			}
-			public ConsoleColor DebugForegroundColor
+
+												public ConsoleColor DebugForegroundColor
 			{
 				get
 				{
@@ -159,7 +183,8 @@ namespace ModuleNameSpace
 					this._ui.DebugForegroundColor = value;
 				}
 			}
-			public ConsoleColor DebugBackgroundColor
+
+												public ConsoleColor DebugBackgroundColor
 			{
 				get
 				{
@@ -170,7 +195,8 @@ namespace ModuleNameSpace
 					this._ui.DebugBackgroundColor = value;
 				}
 			}
-			public ConsoleColor VerboseForegroundColor
+
+												public ConsoleColor VerboseForegroundColor
 			{
 				get
 				{
@@ -181,7 +207,8 @@ namespace ModuleNameSpace
 					this._ui.VerboseForegroundColor = value;
 				}
 			}
-			public ConsoleColor VerboseBackgroundColor
+
+												public ConsoleColor VerboseBackgroundColor
 			{
 				get
 				{
@@ -192,7 +219,8 @@ namespace ModuleNameSpace
 					this._ui.VerboseBackgroundColor = value;
 				}
 			}
-			public ConsoleColor ProgressForegroundColor
+
+												public ConsoleColor ProgressForegroundColor
 			{
 				get
 				{
@@ -203,7 +231,8 @@ namespace ModuleNameSpace
 					this._ui.ProgressForegroundColor = value;
 				}
 			}
-			public ConsoleColor ProgressBackgroundColor
+
+												public ConsoleColor ProgressBackgroundColor
 			{
 				get
 				{
@@ -214,7 +243,8 @@ namespace ModuleNameSpace
 					this._ui.ProgressBackgroundColor = value;
 				}
 			}
-			private MainModuleUI _ui;
+
+						private MainModuleUI _ui;
 		}
 	}
 }

@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace ModuleNameSpace
 {
-	public class Choice_Box
+		public class Choice_Box
 	{
-		public static int Show(Collection<ChoiceDescription> arrChoice, int intDefault, string strTitle, string strPrompt)
+				public static int Show(Collection<ChoiceDescription> arrChoice, int intDefault, string strTitle, string strPrompt)
 		{
 			if (arrChoice == null)
 			{

@@ -1,0 +1,8 @@
+E:\kart_new\RUNFG-main\RunFallGuys\bin\Debug\RunFallGuys.exe.config
+E:\kart_new\RUNFG-main\RunFallGuys\bin\Debug\RunFallGuys.exe
+E:\kart_new\RUNFG-main\RunFallGuys\bin\Debug\RunFallGuys.pdb
+E:\kart_new\RUNFG-main\RunFallGuys\obj\Debug\RunFallGuys.csproj.AssemblyReference.cache
+E:\kart_new\RUNFG-main\RunFallGuys\obj\Debug\RunFallGuys.csproj.SuggestedBindingRedirects.cache
+E:\kart_new\RUNFG-main\RunFallGuys\obj\Debug\RunFallGuys.csproj.CoreCompileInputs.cache
+E:\kart_new\RUNFG-main\RunFallGuys\obj\Debug\RunFallGuys.exe
+E:\kart_new\RUNFG-main\RunFallGuys\obj\Debug\RunFallGuys.pdb
