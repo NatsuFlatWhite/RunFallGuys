@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunFallGuys", "RunFallGuys\RunFallGuys.csproj", "{2680C9A7-0D6C-47C4-B6EA-E4B8AC592A6E}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunFallGuys", "RunFallGuys\RunFallGuys.csproj", "{7774C2E5-1DE7-44A7-BF8B-F1142F4B0C4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2680C9A7-0D6C-47C4-B6EA-E4B8AC592A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2680C9A7-0D6C-47C4-B6EA-E4B8AC592A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2680C9A7-0D6C-47C4-B6EA-E4B8AC592A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2680C9A7-0D6C-47C4-B6EA-E4B8AC592A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7774C2E5-1DE7-44A7-BF8B-F1142F4B0C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7774C2E5-1DE7-44A7-BF8B-F1142F4B0C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7774C2E5-1DE7-44A7-BF8B-F1142F4B0C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7774C2E5-1DE7-44A7-BF8B-F1142F4B0C4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
